@@ -3,11 +3,12 @@ class CreateProfessionals < ActiveRecord::Migration[6.0]
     create_table :professionals do |t|
       t.integer :service_id
       t.string :name
+      t.integer :phone_number
       t.string :email
       t.string :password_digest
-      t.string :location
+      t.string :address
       t.integer :price
-      t.string :license
+      t.string :license_number
 
       t.timestamps
     end

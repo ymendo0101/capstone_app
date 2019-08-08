@@ -1,0 +1,6 @@
+@services.map do |service|
+  {
+    id: service.id,
+    name: service.name,
+  }
+end

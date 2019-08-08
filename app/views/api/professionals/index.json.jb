@@ -1,0 +1,8 @@
+@professionals.map do |professional|
+  {
+    id: professional.id,
+    name: professional.name,
+    email: professional.email,
+    address: professional.address,
+  }
+end

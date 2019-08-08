@@ -1,0 +1,5 @@
+{
+  id: @service.id,
+  name: @service.name,
+  professionals: @service.professionals,
+}

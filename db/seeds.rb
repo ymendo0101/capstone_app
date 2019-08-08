@@ -1,23 +1,27 @@
+
 Service.create!(name: "Construction")
 Service.create!(name: "Landscaping")
 Service.create!(name: "Cleaning")
 Service.create!(name: "Catering")
 Service.create!(name: "Beauty")
 
-Professional.create!(service_id: 3, name: "Chris Pratt", email: "cpratt@email.com", password: "password", location: "Chicago", price: 100.21, license: "true")
-Professional.create!(service_id: 2, name: "Tony Stark", email: "tstark@email.com", password: "password", location: "Chicago", price: 50.00, license: "true")
-Professional.create!(service_id: 5, name: "Peter Parker", email: "pparker@email.com", password: "password", location: "Chicago", price: 200.00, license: "true")
-Professional.create!(service_id: 4, name: "Bruce Willis", email: "bwillis@email.com", password: "password", location: "Chicago", price: 1500.00, license: "true")
-Professional.create!(service_id: 1, name: "Denzel Washington", email: "dwashington@email.com", password: "password", location: "Chicago", price: 10000.0, license: "true")
+User.create!(name: "Cecilia Benitez", phone_number: "773-996-5123", email: "cbenitez@email.com", password: "password", address: "Chicago")
+User.create!(name: "Yarisma Mendoza", phone_number: "773-996-5124", email: "ymendoza@email.com", password: "password", address: "Wisconsin")
+User.create!(name: "Ximena Cortez", phone_number: "773-996-5125", email: "xcortez@email.com", password: "password", address: "Indiana")
+User.create!(name: "Waldo Rivera", phone_number: "773-996-5126", email: "wrivera@email.com", password: "password", address: "Chicago")
+User.create!(name: "Francisco Perez", phone_number: "773-996-5127", email: "fperez@email.com", password: "password", address: "Wisconsin")
 
-User.create!(name: "Cecilia Benitez", email: "cbenitez@email.com", password: "password", service: "Construction", date: "11/23/2019", location: "Chicago", professional: "Denzel Washington")
-User.create!(name: "Cecilia Benitez", email: "cbenitez@email.com", password: "password", service: "Construction", date: "11/23/2019", location: "Chicago", professional: "Denzel Washington")
-User.create!(name: "Cecilia Benitez", email: "cbenitez@email.com", password: "password", service: "Construction", date: "11/23/2019", location: "Chicago", professional: "Denzel Washington")
-User.create!(name: "Cecilia Benitez", email: "cbenitez@email.com", password: "password", service: "Construction", date: "11/23/2019", location: "Chicago", professional: "Denzel Washington")
-User.create!(name: "Cecilia Benitez", email: "cbenitez@email.com", password: "password", service: "Construction", date: "11/23/2019", location: "Chicago", professional: "Denzel Washington")
+Professional.create!(service_id: 3, name: "Chris Pratt", phone_number: "773-996-5454", email: "cpratt@email.com", password: "password", address: "Chicago", license_number: "true")
+Professional.create!(service_id: 2, name: "Tony Stark", phone_number: "773-996-5453", email: "tstark@email.com", password: "password", address: "Chicago", license_number: "true")
+Professional.create!(service_id: 5, name: "Peter Parker", phone_number: "773-996-5452", email: "pparker@email.com", password: "password", address: "Chicago", license_number: "true")
+Professional.create!(service_id: 4, name: "Bruce Willis", phone_number: "773-996-5451", email: "bwillis@email.com", password: "password", address: "Chicago", license_number: "true")
+Professional.create!(service_id: 1, name: "Denzel Washington", phone_number: "773-996-5450", email: "dwashington@email.com", password: "password", address: "Chicago", license_number: "true")
 
-Appointment.create!(professional_id: 3, user_id: 1, accepted: "FALSE")
-Appointment.create!(professional_id: 3, user_id: 1, accepted: "FALSE")
-Appointment.create!(professional_id: 3, user_id: 1, accepted: "FALSE")
-Appointment.create!(professional_id: 3, user_id: 1, accepted: "FALSE")
-Appointment.create!(professional_id: 3, user_id: 1, accepted: "FALSE")
+Appointment.create!(accepted: "false", user_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours)
+
+# User.find_each do |user|
+#   # Devise.warden... set password
+#   user.password = "password"
+#   user.password_confirmatinon = "password"
+#   user.save
+# end

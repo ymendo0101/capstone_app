@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 2019_07_25_021528) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.integer "professional_id"
     t.integer "user_id"
-    t.string "accepted"
+    t.integer "professional_id"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.boolean "accepted"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,11 +28,12 @@ ActiveRecord::Schema.define(version: 2019_07_25_021528) do
   create_table "professionals", force: :cascade do |t|
     t.integer "service_id"
     t.string "name"
+    t.integer "phone_number"
     t.string "email"
     t.string "password_digest"
-    t.string "location"
+    t.string "address"
     t.integer "price"
-    t.string "license"
+    t.string "license_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,11 +47,9 @@ ActiveRecord::Schema.define(version: 2019_07_25_021528) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.integer "phone_number"
     t.string "password_digest"
-    t.string "service"
-    t.string "request_date"
-    t.string "location"
-    t.string "professional"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
