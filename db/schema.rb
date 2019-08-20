@@ -17,10 +17,11 @@ ActiveRecord::Schema.define(version: 2019_07_25_021528) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "service_id"
     t.integer "professional_id"
     t.datetime "start_datetime"
     t.datetime "end_datetime"
-    t.boolean "accepted"
+    t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -33,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_021528) do
     t.string "password_digest"
     t.string "address"
     t.integer "price"
-    t.string "license_number"
+    t.integer "license_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -8,7 +8,7 @@ class CreateProfessionals < ActiveRecord::Migration[6.0]
       t.string :password_digest
       t.string :address
       t.integer :price
-      t.string :license_number
+      t.integer :license_number
 
       t.timestamps
     end

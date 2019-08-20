@@ -17,7 +17,25 @@ Professional.create!(service_id: 5, name: "Peter Parker", phone_number: "773-996
 Professional.create!(service_id: 4, name: "Bruce Willis", phone_number: "773-996-5451", email: "bwillis@email.com", password: "password", address: "Chicago", license_number: "true")
 Professional.create!(service_id: 1, name: "Denzel Washington", phone_number: "773-996-5450", email: "dwashington@email.com", password: "password", address: "Chicago", license_number: "true")
 
-Appointment.create!(accepted: "false", user_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours)
+Appointment.create!(user_id: 1, service_id: 3, professional_id: 1, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 2, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 3, service_id: 5, professional_id: 3, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 4, service_id: 4, professional_id: 4, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 5, service_id: 1, professional_id: 5, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 1, service_id: 1, professional_id: 5, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 3, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 4, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 1, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
+
+Appointment.create!(user_id: 5, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, status: true)
 
 # User.find_each do |user|
 #   # Devise.warden... set password

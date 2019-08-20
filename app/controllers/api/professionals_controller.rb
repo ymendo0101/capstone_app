@@ -1,6 +1,6 @@
 class Api::ProfessionalsController < ApplicationController
   def index
-    @professional = professional.all
+    @professionals = Professional.all
     render "index.json.jb"
   end
 
@@ -15,9 +15,11 @@ class Api::ProfessionalsController < ApplicationController
       name: params[:name],
       phone_number: params[:phone_number],
       email: params[:email],
-      address: params[:address],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
+      address: params[:address],
+      price: params[:price],
+      license_number: params[:license_number],
     )
     if professional.save
       render json: { message: "Professional created successfully" }, status: :created
