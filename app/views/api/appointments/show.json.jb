@@ -4,5 +4,5 @@
   professional_id: @appointment.professional_id,
   start_datetime: @appointment.start_datetime,
   end_datetime: @appointment.end_datetime,
-  status: appointment.status,
+  status: @appointment.status,
 }

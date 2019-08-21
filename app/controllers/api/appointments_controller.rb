@@ -1,15 +1,17 @@
 class Api::AppointmentsController < ApplicationController
   def index
     if current_user
-      @appointments = current_user.appointments.where(status: true)
+      @appointments = current_user.appointments #.where(status: true)
     elsif current_professional
-      @appointments = current_professional.appointments.where(status: true)
+      @appointments = current_professional.appointments #.where(status: true)
+    else
+      @appointments = []
     end
     render "index.json.jb"
   end
 
   def create
-    @appointment = appointment.new(
+    @appointment = Appointment.new(
       user_id: current_user.id,
       professional_id: params[:professional_id],
       start_datetime: params[:start_datetime],
