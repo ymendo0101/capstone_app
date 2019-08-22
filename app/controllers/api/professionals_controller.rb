@@ -10,8 +10,10 @@ class Api::ProfessionalsController < ApplicationController
   # end
 
   def create
+    service = Service.find_by(name: params[:service])
+    render json: { errors: "***service error***" }, status: :bad_request if service.nil?
     professional = Professional.new(
-      service: Service.find_by(name: params[:service]),
+      service: service,
       name: params[:name],
       phone_number: params[:phone_number],
       address: params[:address],
