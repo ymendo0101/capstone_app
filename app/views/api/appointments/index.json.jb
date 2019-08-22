@@ -1,11 +1,12 @@
-@appointments.map do |appointment|
-  # render partial: "appointment", locals: { appointment: @appointment }
-  {
-    id: appointment.id,
-    user_id: appointment.user_id,
-    professional_id: appointment.professional_id,
-    start_datetime: appointment.start_datetime,
-    end_datetime: appointment.end_datetime,
-    status: appointment.status,
-  }
-end
+# @appointments.map do |appointment|
+render partial: "appointment", locals: { appointment: @appointment }
+#   {
+#     id: appointment.id,
+#     user_id: appointment.user_id,
+#     service_id: appointment.service_id,
+#     professional_id: appointment.professional_id,
+#     start_datetime: appointment.start_datetime,
+#     end_datetime: appointment.end_datetime,
+#     status: appointment.status,
+#   }
+# end

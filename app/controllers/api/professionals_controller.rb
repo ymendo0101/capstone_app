@@ -14,12 +14,13 @@ class Api::ProfessionalsController < ApplicationController
       service: Service.find_by(name: params[:service]),
       name: params[:name],
       phone_number: params[:phone_number],
-      email: params[:email],
-      password: params[:password],
-      password_confirmation: params[:password_confirmation],
       address: params[:address],
       price: params[:price],
       license_number: params[:license_number],
+      email: params[:email],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
+
     )
     if professional.save
       render json: { message: "Professional created successfully" }, status: :created

@@ -14,6 +14,7 @@ class Api::AppointmentsController < ApplicationController
     @appointment = Appointment.new(
       user_id: current_user.id,
       professional_id: params[:professional_id],
+      service_id: params[:service_id],
       start_datetime: params[:start_datetime],
       end_datetime: params[:end_datetime],
       status: true,

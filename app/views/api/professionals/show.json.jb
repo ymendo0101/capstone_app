@@ -1,5 +1,12 @@
 {
   id: @professional.id,
+  service: @professional.service,
   name: @professional.name,
-  professionals: @professionals,
+  phone_number: @professional.phone_number,
+  address: @professional.address,
+  price: @professional.price,
+  license_number: @professional.license_number,
+  email: @professional.email,
+  password: @professional.password,
+  password_confirmation: @professional.password_confirmation,
 }
