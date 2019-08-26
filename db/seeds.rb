@@ -1,4 +1,3 @@
-
 Service.create!(name: "Construction")
 Service.create!(name: "Landscaping")
 Service.create!(name: "Cleaning")

@@ -23,8 +23,26 @@ class Api::AppointmentsController < ApplicationController
     render "show.json.jb"
   end
 
+  def update
+    @appointment = Appointment.find_by(id: params[:id])
+    @product.start_datetime = params[:start_datetime] || @product.start_datetime
+    @product.end_datetime = params[:end_datetime] || @product.end_datetime
+
+    if @appointment.save
+      render json: { message: "Your appointment has been created successfully" }
+    else
+      render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   def show
-    @appointment = current_user.appointments.find_by(id: params[:id])
+    if current_user
+      @appointment = current_user.appointments.find_by(id: params[:id])
+    elsif current_professional
+      @appointment = current_professional.appointments.find_by(id: params[:id])
+    else
+      @appoints = {}
+    end
     render "show.json.jb"
   end
 
