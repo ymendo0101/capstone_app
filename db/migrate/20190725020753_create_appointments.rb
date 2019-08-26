@@ -6,7 +6,7 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.integer :professional_id
       t.datetime :start_datetime
       t.datetime :end_datetime
-      t.boolean :status
+      t.integer :appointment_status_id
 
       t.timestamps
     end

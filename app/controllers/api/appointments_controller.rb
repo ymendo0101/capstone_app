@@ -15,9 +15,9 @@ class Api::AppointmentsController < ApplicationController
       user_id: current_user.id,
       professional_id: params[:professional_id],
       service_id: params[:service_id],
-      start_datetime: params[:start_datetime],
-      end_datetime: params[:end_datetime],
-      status: true,
+      start_datetime: Time.parse(params[:start_datetime]),
+      end_datetime: Time.parse(params[:end_datetime]),
+      appointment_status_id: AppointmentStatus.find_by(status: "pending").id,
     )
     @appointment.save
     render "show.json.jb"

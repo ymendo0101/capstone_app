@@ -7,5 +7,5 @@
   professional: appointment.professional,
   start_datetime: appointment.start_datetime,
   end_datetime: appointment.end_datetime,
-  status: appointment.status,
+  appointment_status: AppointmentStatus.find(appointment.appointment_status_id).status,
 }
