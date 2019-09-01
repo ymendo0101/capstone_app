@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do
+    get "/users" => "users#index"
     post "/users" => "users#create"
     post "/sessions" => "sessions#create"
     post "/sessions_professional" => "sessions#create_professional"
@@ -25,12 +26,12 @@ Rails.application.routes.draw do
 
     post "/appointments" => "appointments#create" # create an open appointment under a given professional, matches to my second screenshot
 
-    get "/appointments/:id" => "appointments#show" # returns all the details about this professional, as well as all the appointments under this professional (matches to our first screenshot)
+    get "/appointments/:id" => "appointments#show" # returns all the details about this professional, as well as all the appointments under this professional (matches to my first screenshot)
 
     #get "/professionals/:id/appointments/:id" => "appointments#show" #matches to my third screenshot
 
     # post "/professionals/:id/appointments/:id" => "appointments#confirm"
-
+    patch "/appointments/:id" => "appointments#update"
     delete "/appointments/:id" => "appointments#destroy"
 
     resources :services do

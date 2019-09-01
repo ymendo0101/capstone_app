@@ -1,8 +1,11 @@
 @professionals.map do |professional|
   {
     id: professional.id,
+    service: professional.service,
     name: professional.name,
     email: professional.email,
     address: professional.address,
+    selected: professional.users.include?(current_user),
   }
 end
+

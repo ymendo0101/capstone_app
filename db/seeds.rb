@@ -20,25 +20,25 @@ AppointmentStatus.create!(status: "pending")
 AppointmentStatus.create!(status: "confirmed")
 AppointmentStatus.create!(status: "declined")
 
-Appointment.create!(user_id: 1, service_id: 3, professional_id: 1, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 1)
+Appointment.create!(user_id: 1, service_id: 3, professional_id: 1, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 1, status: "Pending")
 
-Appointment.create!(user_id: 2, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 1)
+Appointment.create!(user_id: 2, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 1, status: "Pending")
 
-Appointment.create!(user_id: 3, service_id: 5, professional_id: 3, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 1)
+Appointment.create!(user_id: 3, service_id: 5, professional_id: 3, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 1, status: "Pending")
 
-Appointment.create!(user_id: 4, service_id: 4, professional_id: 4, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 2)
+Appointment.create!(user_id: 4, service_id: 4, professional_id: 4, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 2, status: "Pending")
 
-Appointment.create!(user_id: 5, service_id: 1, professional_id: 5, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 2)
+Appointment.create!(user_id: 5, service_id: 1, professional_id: 5, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 1, status: "Pending")
 
-Appointment.create!(user_id: 1, service_id: 1, professional_id: 5, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 2)
+Appointment.create!(user_id: 1, service_id: 1, professional_id: 5, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 2, status: "Pending")
 
-Appointment.create!(user_id: 3, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 3)
+Appointment.create!(user_id: 3, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 3, status: "Pending")
 
-Appointment.create!(user_id: 4, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 3)
+Appointment.create!(user_id: 4, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 3, status: "Pending")
 
-Appointment.create!(user_id: 1, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 3)
+Appointment.create!(user_id: 1, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 3, status: "Pending")
 
-Appointment.create!(user_id: 5, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 3)
+Appointment.create!(user_id: 5, service_id: 2, professional_id: 2, start_datetime: 5.days.from_now, end_datetime: 5.days.from_now + 3.hours, appointment_status_id: 3, status: "Pending")
 
 # User.find_each do |user|
 #   # Devise.warden... set password

@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 201907250201835) do
     t.integer "appointment_status_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
   end
 
   create_table "professionals", force: :cascade do |t|
@@ -60,5 +61,4 @@ ActiveRecord::Schema.define(version: 201907250201835) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
 end

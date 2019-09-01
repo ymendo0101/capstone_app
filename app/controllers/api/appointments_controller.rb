@@ -11,25 +11,37 @@ class Api::AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(
-      user_id: current_user.id,
-      professional_id: params[:professional_id],
-      service_id: params[:service_id],
-      start_datetime: Time.parse(params[:start_datetime]),
-      end_datetime: Time.parse(params[:end_datetime]),
-      appointment_status_id: AppointmentStatus.find_by(status: "pending").id,
-    )
-    @appointment.save
-    render "show.json.jb"
+    if current_user
+      @appointment = Appointment.new(
+        user_id: current_user.id,
+        service_id: params[:service_id],
+        professional_id: params[:professional_id],
+        # address: params[:address],
+        start_datetime: Time.parse(params[:start_datetime]),
+        end_datetime: Time.parse(params[:end_datetime]),
+        appointment_status_id: 1,
+        status: "pending",
+      )
+      if @appointment.save
+        render "show.json.jb"
+      else
+        render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
+      end
+    else
+      render json: { message: "Only a user can create an appointment" }
+    end
   end
 
   def update
+    # if current_professional
     @appointment = Appointment.find_by(id: params[:id])
-    @product.start_datetime = params[:start_datetime] || @product.start_datetime
-    @product.end_datetime = params[:end_datetime] || @product.end_datetime
+    # @appointment.appointment_status = params[:start_datetime] || @appointment.appointment_status
 
+    @appointment.appointment_status_id = params[:appointment_status_id] || @appointment.appointment_status_id
+
+    @appointment.status = params[:status] || @appointment.status
     if @appointment.save
-      render json: { message: "Your appointment has been created successfully" }
+      render json: { message: "The status of your appointment has been updated successfully" }
     else
       render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
     end
@@ -38,10 +50,11 @@ class Api::AppointmentsController < ApplicationController
   def show
     if current_user
       @appointment = current_user.appointments.find_by(id: params[:id])
+      # @current_user = current_user
     elsif current_professional
       @appointment = current_professional.appointments.find_by(id: params[:id])
     else
-      @appoints = {}
+      @appointment = {}
     end
     render "show.json.jb"
   end
