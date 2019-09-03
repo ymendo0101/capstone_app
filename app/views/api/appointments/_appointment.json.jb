@@ -1,6 +1,11 @@
 {
   id: appointment.id,
   user_id: appointment.user_id,
+  user: {
+    id: appointment.user.id,
+    name: appointment.user.name,
+    email: appointment.user.email,
+  },
   service_id: appointment.service_id,
   service: appointment.service,
   professional_id: appointment.professional_id,
@@ -10,4 +15,5 @@
   appointment_status_id: appointment.appointment_status_id,
   # appointment_status: appointment.appointment_status.status,
   status: appointment.status,
+  title: "#{appointment.professional.name} for #{appointment.user.name}",
 }
