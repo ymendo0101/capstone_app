@@ -1,5 +1,8 @@
 {
   id: @user.id,
   name: @user.name,
+  phone_number: @user.phone_number,
   email: @user.email,
+  image_url: @user.image_url,
+  address: @user.address,
 }

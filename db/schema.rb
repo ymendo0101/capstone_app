@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 201907250201835) do
     t.datetime "start_datetime"
     t.datetime "end_datetime"
     t.integer "appointment_status_id"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
   end
 
   create_table "professionals", force: :cascade do |t|
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 201907250201835) do
     t.string "address"
     t.integer "price"
     t.integer "license_number"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -60,5 +61,7 @@ ActiveRecord::Schema.define(version: 201907250201835) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
   end
+
 end

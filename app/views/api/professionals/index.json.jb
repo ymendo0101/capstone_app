@@ -6,6 +6,6 @@
     email: professional.email,
     address: professional.address,
     selected: professional.users.include?(current_user),
+    image_url: professional.image_url,
   }
 end
-

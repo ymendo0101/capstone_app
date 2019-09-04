@@ -9,6 +9,7 @@ class CreateProfessionals < ActiveRecord::Migration[6.0]
       t.string :address
       t.integer :price
       t.integer :license_number
+      t.string :image_url
 
       t.timestamps
     end

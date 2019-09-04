@@ -9,4 +9,5 @@
   email: @professional.email,
   password: @professional.password,
   password_confirmation: @professional.password_confirmation,
+  image_url: @professional.image_url,
 }
